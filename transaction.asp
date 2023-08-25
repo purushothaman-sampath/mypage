@@ -4,42 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TA Office</title>
-    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/Bootstrap/swiper-bundle.min.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style1.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" >
 
     
 </head>
-<%
 
-set con = Server.CreateObject("ADODB.Connection")
-set rs = Server.CreateObject("ADODB.Recordset")		
-con.Open "DSN=tacsdb;UID=ras;PWD=ras"
-
-code=request("code")
-code = Request("code")
-cpf_no=Request("cpf_no")
-strSql="SELECT EMP_NAME ,TITLE from CO_EMPMST where cpf_no="&cpf_no&"" 
-set rs=con.Execute( strSql)
-
-name_v=rs("EMP_NAME")
-		
-title_v=rs("TITLE")	
-    
-
-If code = 1 Then
-    Response.Write("<script>alert('Hello! Welcome Back :" & title_v &"." & name_v & "');</script>")
-    
-End If
-
-%>
 <body id="scrollable-content" class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
     <div style="  width: 100%; height: 100%; background-image: url('assets/img/1.jpg'); background-size: cover;  background-position: center;  ">
     <nav style="  background-color: transparent; " class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0 float-right" >
